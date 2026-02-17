@@ -1,6 +1,6 @@
 ---
 theme: seriph
-background: ./assets/cover.gif
+background: /assets/cover.gif
 title: Using OpenStreetMap for Urban Spatial Analysis
 class: text-center
 transition: slide-left
@@ -30,7 +30,7 @@ duration: 60min
 />
 
 <img 
-  src="./assets/librarylogo.png" 
+  src="/assets/librarylogo.png" 
   class="absolute"
   style="left: 70px; top: 300px; width:300px; background-color: rgba(255, 255, 255, 0); padding: 10px; border-radius: 8px;"
   alt="OSM logo"
@@ -110,7 +110,6 @@ level: 2
 <br>
 <br>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
@@ -137,13 +136,13 @@ Here is another comment.
 ---
 transition: slide-up
 layout: image-right
-image: ./assets/intro.gif
+image: /assets/intro.gif
 ---
 
 # What is OpenStreetMap?
 Is a free, open, and collaborative map of the world that is created and maintained by volunteers.
 
-<img src="./assets/stats.png">
+<img src="/assets/stats.png">
 
 <style>
 h1 {
@@ -161,7 +160,7 @@ h1 {
 transition: slide-up
 layout: image-right
 level: 2
-image: ./assets/comparisson3.png
+image: /assets/comparisson3.png
 backgroundSize: contain
 ---
 
@@ -293,7 +292,7 @@ code {
 ---
 layout: image
 level: 2
-image: ./assets/tags.png
+image: /assets/tags.png
 --- 
 
 ---
@@ -305,7 +304,7 @@ Interacting with OpenStreetMap
 
 <style>
 .slidev-layout {
-  background-image: url('./assets/demo1.gif');
+  background-image: url('/assets/demo1.gif');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -420,7 +419,7 @@ out;
 ---
 layout: image-right
 level: 2
-image: ./assets/query1.gif
+image: /assets/query1.gif
 backgroundSize: contain
 ---
 
@@ -437,13 +436,13 @@ out;
 2. Got to [https://overpass-turbo.eu/](https://overpass-turbo.eu/)
 3. Search and zoom in to Philadelphia, PA
 4. Paste the query on the text area on the left
-5. Click the run button <img src="./assets/run.png" width="50px">
+5. Click the run button <img src="/assets/run.png" width="50px">
 </v-clicks>
 
 ---
 layout: image-right
 level: 2
-image: ./assets/query2.gif
+image: /assets/query2.gif
 backgroundSize: contain
 clicks: 6
 ---
@@ -473,7 +472,7 @@ out center;
 <div v-click="[5,6]">we have to add <code>center</code> to the <code>out;</code> statement to get a point on every element</div>
 
 <div v-click="6">Re-run the query
-<img src="./assets/run.png" width="50px">
+<img src="/assets/run.png" width="50px">
 </div>
 
 </div>
@@ -547,7 +546,7 @@ out center;
 ---
 layout: image-right
 level: 2
-image: ./assets/query3.gif
+image: /assets/query3.gif
 backgroundSize: contain
 clicks: 3
 ---
@@ -592,7 +591,7 @@ out center;
 ---
 layout: image-right
 level: 2
-image: ./assets/query4.gif
+image: /assets/query4.gif
 backgroundSize: contain
 clicks: 3
 ---
@@ -755,7 +754,7 @@ h1 {
 ---
 layout: image-right
 level: 2
-image: ./assets/query5.png
+image: /assets/query5.png
 backgroundSize: contain
 ---
 
@@ -781,13 +780,13 @@ nwr["amenity"="pharmacy"](around.hospitals:1000)->.nearby_pharmacies;
 2. Got to [https://overpass-turbo.eu/](https://overpass-turbo.eu/)
 3. Search and zoom in to Philadelphia, PA
 4. Paste the query on the text area on the left
-5. Click the run button <img src="./assets/run.png" width="50px">
+5. Click the run button <img src="/assets/run.png" width="50px">
 </v-clicks>
 
 ---
 layout: image-right
 level: 2
-image: ./assets/query6.png
+image: /assets/query6.png
 backgroundSize: contain
 ---
 
@@ -811,7 +810,7 @@ nwr["amenity"="pharmacy"](around.hospitals:1000)->.nearby_pharmacies;
 ---
 layout: image-right
 level: 2
-image: ./assets/query7.png
+image: /assets/query7.png
 backgroundSize: contain
 ---
 
@@ -835,7 +834,7 @@ nwr["leisure"="park"](around.stations:200)->.nearby_parks;
 ---
 layout: image-right
 level: 2
-image: ./assets/query8.png
+image: /assets/query8.png
 backgroundSize: contain
 ---
 
@@ -874,7 +873,7 @@ p {
 ---
 layout: image-right
 level: 2
-image: ./assets/query9.gif
+image: /assets/query9.gif
 backgroundSize: contain
 ---
 
