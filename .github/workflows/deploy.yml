@@ -1,0 +1,86 @@
+name: Deploy Slidev to GitHub Pages
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+# Add permissions
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Build
+      run: npm run build
+      
+    - name: Add Google Analytics
+      run: |
+        cat > add_analytics.py << 'EOF'
+        analytics_code = '''<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC52W8J799"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RC52W8J799');
+        </script>
+        '''
+        
+        with open('./dist/index.html', 'r') as f:
+            content = f.read()
+        
+        content = content.replace('</head>', analytics_code + '</head>')
+        
+        with open('./dist/index.html', 'w') as f:
+            f.write(content)
+        
+        print("Analytics code added successfully")
+        EOF
+        python3 add_analytics.py
+      
+    - name: Verify Analytics in file
+      run: |
+        if grep -q "gtag" ./dist/index.html; then
+          echo "✓ Analytics code found in index.html"
+          grep -A 5 "gtag" ./dist/index.html | head -10
+        else
+          echo "✗ Analytics code NOT found!"
+          exit 1
+        fi
+      
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./dist
+  
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
