@@ -15,6 +15,13 @@ info: false
 drawings:
   enabled: false
 contextMenu: false
+colorSchema: light
+themeConfig:
+  primary: '#5d8392'
+record: false
+routerMode: hash
+css: unocss
+highlighter: shiki
 ---
 
 <div class="overlay"></div>
