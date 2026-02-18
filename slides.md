@@ -11,7 +11,6 @@ presenter: false
 remote: false         
 selectable: false     
 monaco: false
-download: true
 info: false
 drawings:
   enabled: false
