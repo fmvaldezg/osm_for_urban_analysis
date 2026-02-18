@@ -6,6 +6,16 @@ class: text-center
 transition: slide-left
 mdc: true
 duration: 60min
+controls: true
+presenter: false      
+remote: false         
+selectable: false     
+monaco: false
+download: true
+info: false
+drawings:
+  enabled: false
+contextMenu: false
 ---
 
 <div class="overlay"></div>
