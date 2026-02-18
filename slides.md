@@ -22,6 +22,7 @@ record: false
 routerMode: hash
 css: unocss
 highlighter: shiki
+download: true
 ---
 
 <div class="overlay"></div>
