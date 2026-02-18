@@ -22,7 +22,8 @@ record: false
 routerMode: hash
 css: unocss
 highlighter: shiki
-download: true
+download: "https://github.com/fmvaldezg/osm_for_urban_analysis/raw/main/Using%20OpenStreetMap%20for%20Urban%20Spatial%20Analysis%20.pptx"
+
 ---
 
 <div class="overlay"></div>
