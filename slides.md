@@ -55,10 +55,10 @@ download: "https://github.com/fmvaldezg/osm_for_urban_analysis/raw/main/Using%20
 />
 
 <div class="abs-br m-6 text-xl">
-  <a href="https://openstreetmap.org" target="_blank" class="slidev-icon-btn">
+  <a href="https://openstreetmap.org" target="_blank" class="slidev-icon-btn" title="Visit OpenStreetMap.org">
     <carbon:earth-filled />
   </a>
-  <a href="https://library.temple.edu/services/support-for-gis-mapping" target="_blank" class="slidev-icon-btn">
+  <a href="https://library.temple.edu/services/support-for-gis-mapping" target="_blank" class="slidev-icon-btn" title="Temple University GIS Support">
     <carbon:information-filled />
   </a>
 </div>
